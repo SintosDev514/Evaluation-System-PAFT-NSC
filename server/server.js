@@ -16,6 +16,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://evaluation-system-paft-nsc.vercel.app",
+  "https://evaluation-system-paft-7qdsp6rhn-roberto-sintos-projects.vercel.app",
 ];
 
 const corsOptions = {
