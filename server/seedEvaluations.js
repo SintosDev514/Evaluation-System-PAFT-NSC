@@ -352,6 +352,36 @@ const seedData = async () => {
 
   sanitizeSatisfaction(evaluations);
 
+  // Adjust ratings for "PAFT Day 2026" to achieve 4.27 average (closest possible: 4.30)
+  const paftDayEvaluations = evaluations.filter(
+    (eval) => eval.eventTitle === "PAFT Day 2026"
+  );
+
+  if (paftDayEvaluations.length > 0) {
+    paftDayEvaluations.forEach((eval) => {
+      eval.ratings = {
+        organization: 4,
+        timeManagement: 4,
+        venue: 4,
+        programFlow: 4,
+        speakers: 5,
+        participation: 4,
+        teamwork: 5,
+        learning: 4,
+        relevance: 4,
+        overallExperience: 5,
+      };
+      eval.meanRating = calculateMean(eval.ratings);
+      eval.satisfaction = "Excellent";
+    });
+    const avgRating =
+      paftDayEvaluations.reduce((sum, e) => sum + e.meanRating, 0) /
+      paftDayEvaluations.length;
+    console.log(
+      `Adjusted ${paftDayEvaluations.length} "PAFT Day 2026" evaluations to ${avgRating.toFixed(2)} average.`
+    );
+  }
+
   try {
     const inserted = await Evaluation.insertMany(evaluations);
     console.log(`Inserted ${inserted.length} sample evaluations.`);
