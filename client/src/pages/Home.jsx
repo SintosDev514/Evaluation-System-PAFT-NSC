@@ -45,7 +45,7 @@ const Home = () => {
             Available Events
           </p>
           <h2 className="text-3xl font-semibold text-slate-900">
-            Review upcoming student activities
+            Review student activities
           </h2>
           <p className="mt-3 text-slate-600">
             Select an event and submit your feedback to help improve future
