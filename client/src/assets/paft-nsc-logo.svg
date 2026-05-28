@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f5f29"/>
+      <stop offset="100%" stop-color="#1b7d3e"/>
+    </linearGradient>
+  </defs>
+  <circle cx="110" cy="110" r="108" fill="url(#grad)" stroke="#fff" stroke-width="4"/>
+  <g transform="translate(110 110)"> 
+    <circle cx="0" cy="0" r="92" fill="#fff"/>
+    <circle cx="0" cy="0" r="84" fill="#0f5f29"/>
+    <g fill="#fff" transform="translate(-60 -60)">
+      <rect x="45" y="10" width="32" height="32" rx="4" ry="4"/>
+      <path d="M 47 10 H 75 L 85 34 H 37 Z" fill="none" stroke="#fff" stroke-width="4"/>
+      <path d="M 45 24 H 83" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g fill="#fff" transform="translate(10 -60)">
+      <path d="M 0 0 L 30 0 L 40 22 L 20 22 Z"/>
+      <path d="M 32 22 C 40 30 40 40 32 46" fill="none" stroke="#fff" stroke-width="4"/>
+      <path d="M 20 22 C 15 30 15 38 20 46" fill="none" stroke="#fff" stroke-width="4"/>
+    </g>
+    <g fill="#fff" transform="translate(-60 10)">
+      <rect x="24" y="10" width="12" height="38" rx="3"/>
+      <path d="M 29 48 L 16 72 H 42 Z" fill="none" stroke="#fff" stroke-width="4"/>
+      <path d="M 24 28 A 10 10 0 0 1 36 28" fill="none" stroke="#fff" stroke-width="4"/>
+    </g>
+    <g fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" transform="translate(10 20)">
+      <path d="M -20 38 C -10 28 10 28 20 38"/>
+      <path d="M -12 30 C -8 24 0 22 6 26"/>
+      <path d="M 12 24 C 16 18 24 16 30 20"/>
+    </g>
+  </g>
+  <text x="110" y="30" fill="#fff" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.5">PHILIPPINE ASSOCIATION OF</text>
+  <text x="110" y="48" fill="#fff" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.5">FOOD TECHNOLOGISTS</text>
+  <text x="110" y="180" fill="#fff" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.5">NwSSU STUDENT CHAPTER</text>
+</svg>
