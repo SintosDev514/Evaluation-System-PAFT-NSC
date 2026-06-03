@@ -10,6 +10,7 @@ const adminLinks = [
   { label: "Dashboard", path: "/dashboard" },
   { label: "Analytics", path: "/analytics" },
   { label: "Responses", path: "/responses" },
+  { label: "By Event", path: "/by-event" },
 ];
 
 const Navbar = () => {

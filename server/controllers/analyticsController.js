@@ -165,4 +165,63 @@ const getMeanAnalytics = async (req, res, next) => {
   }
 };
 
-module.exports = { getAnalyticsData, getMeanAnalytics };
+const getByEventData = async (req, res, next) => {
+  try {
+    const evaluations = await Evaluation.find()
+      .sort({ createdAt: -1 })
+      .limit(ADMIN_RESPONSE_LIMIT);
+
+    const ratingLabels = [
+      "organization", "timeManagement", "venue", "programFlow",
+      "speakers", "participation", "teamwork", "learning",
+      "relevance", "overallExperience",
+    ];
+
+    const groups = evaluations.reduce((acc, item) => {
+      const title = item.eventTitle;
+      if (!acc[title]) acc[title] = [];
+      acc[title].push(item);
+      return acc;
+    }, {});
+
+    const result = Object.entries(groups).map(([eventTitle, evals]) => {
+      const respondents = evals.map((e) => ({
+        _id: e._id,
+        participantName: e.participantName,
+        meanRating: e.meanRating,
+        satisfaction: e.satisfaction,
+        createdAt: e.createdAt,
+        ratings: e.ratings,
+        enjoyMost: e.enjoyMost || "",
+        improvementSuggestions: e.improvementSuggestions || "",
+      }));
+
+      const perQuestion = ratingLabels.map((key) => {
+        const values = evals.map((e) => e.ratings[key]);
+        const sum = values.reduce((a, b) => a + b, 0);
+        const avg = values.length > 0 ? Number((sum / values.length).toFixed(2)) : 0;
+        const starDistribution = {};
+        for (let s = 1; s <= 5; s++) {
+          starDistribution[s] = values.filter((v) => v === s).length;
+        }
+        return { question: key, average: avg, starDistribution };
+      });
+
+      const allMean = evals.reduce((s, e) => s + e.meanRating, 0) / evals.length;
+
+      return {
+        eventTitle,
+        totalRespondents: evals.length,
+        overallMean: Number(allMean.toFixed(2)),
+        perQuestion,
+        respondents,
+      };
+    });
+
+    res.json(result);
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { getAnalyticsData, getMeanAnalytics, getByEventData };

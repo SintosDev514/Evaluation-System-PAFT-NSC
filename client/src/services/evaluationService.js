@@ -27,3 +27,10 @@ export const fetchMeanAnalytics = async () => {
   });
   return response.data;
 };
+
+export const fetchByEvent = async () => {
+  const response = await api.get("/analytics/by-event", {
+    headers: getAuthHeaders(),
+  });
+  return response.data;
+};

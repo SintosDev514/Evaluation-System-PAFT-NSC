@@ -9,6 +9,7 @@ import Success from "./pages/Success";
 import Dashboard from "./pages/Dashboard";
 import Analytics from "./pages/Analytics";
 import Responses from "./pages/Responses";
+import ByEvent from "./pages/ByEvent";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -45,6 +46,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Responses />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/by-event"
+              element={
+                <ProtectedRoute>
+                  <ByEvent />
                 </ProtectedRoute>
               }
             />

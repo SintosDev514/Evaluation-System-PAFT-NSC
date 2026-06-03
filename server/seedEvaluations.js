@@ -308,17 +308,20 @@ const calculateMean = (ratings) => {
 };
 
 const generateEventTitles = () => {
-  const baseCount = Math.floor(98 / eventTitles.length);
-  const extra = 98 % eventTitles.length;
+  const distribution = {
+    "Welcome BSFT Freshies 2025": 40,
+    "PAFT-NSC General Assembly A.Y. 2025–2026": 15,
+    "PAFT Day 2026": 14,
+    "PAFT-NSC Officer Election 2026": 15,
+    "BSFT Batch 2026 Celebration": 14,
+  };
   const eventList = [];
-
-  eventTitles.forEach((title, index) => {
-    const count = baseCount + (index < extra ? 1 : 0);
+  eventTitles.forEach((title) => {
+    const count = distribution[title] || 0;
     for (let j = 0; j < count; j += 1) {
       eventList.push(title);
     }
   });
-
   return shuffleArray(eventList);
 };
 
@@ -428,8 +431,8 @@ const seedData = async () => {
       ratings,
       activities,
       satisfaction,
-      enjoyMost: buildComment(eventTitle, activities),
-      improvementSuggestions: randomItem(improvementSuggestions),
+      enjoyMost: i < 20 ? buildComment(eventTitle, activities) : "",
+      improvementSuggestions: i < 20 ? randomItem(improvementSuggestions) : "",
       meanRating,
       createdAt,
       updatedAt: createdAt,
