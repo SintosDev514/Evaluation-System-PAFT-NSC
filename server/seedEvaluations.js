@@ -173,55 +173,55 @@ const activityOptions = [
   "Social Interaction",
 ];
 const feedbackIntros = [
-  "Nalingaw ako han event kay klaro an orientation han PAFT-NSC student chapter.",
-  "Maopay an flow han activity para ha mga NWSSU BSFT students.",
-  "Nakabulig gud ini nga event ha akon pag-inchindi han food technology nga kurso.",
-  "Na-enjoy ko an workshop kay epektibo an pagdala han mga facilitators.",
-  "Mas naghingadto ako kay naka-expand an akon knowledge ha student organization program.",
-  "Naka-feel ako nga waray ginpabay-an nga estudyante durante han event.",
-  "Naka-empower ako pinaagi han mga discussion nga para ha student chapter.",
-  "Maupay an pag-manage han PAFT-NSC event para ha mga partisipante.",
-  "Mapasalamaton ako kay mayda klaro nga pagkahuman han presentations.",
-  "Nami an interaction kay damo an nag-ambit hin mga ideya para ha event.",
+  "I enjoyed the event because the orientation of the PAFT-NSC student chapter was clear.",
+  "The flow of the activity was good for the NWSSU BSFT students.",
+  "This event helped me understand the food technology course better.",
+  "I enjoyed the workshop because the facilitators were effective.",
+  "I was able to expand my knowledge about the student organization program.",
+  "I felt that no student was left behind during the event.",
+  "I was empowered through the discussions for the student chapter.",
+  "The PAFT-NSC event was well-managed for the participants.",
+  "I am grateful that the presentations were well-executed.",
+  "The interaction was great because many shared ideas for the event.",
 ];
 
 const feedbackDetails = [
-  "Naka-focus hira ha practical tips para ha food processing ngan safety.",
-  "Damo kami natun-an parti han teamwork exercises kag future industry skills.",
-  "Klaro an explanation han organizers parti han student chapter goals.",
-  "Maayo an combination han lectures ngan interactive sessions.",
-  "Dako an akon pasalamat kay maopay an participation han tanan.",
-  "Nabulig an open forum para masecure an research ideas ngan project outputs.",
-  "Naka-enjoy ako ha speaker segment nga nagtuhop han aktual nga food trends.",
-  "Nakaambit kami hin mga practical na eksperyensya para ha campus activities.",
-  "Nakatabang an event ha akon pagplano han akademiko ngan extracurricular goals.",
-  "Magayon an pag-organisar, labi na an paghatag hin oras ha kada session.",
+  "They focused on practical tips for food processing and safety.",
+  "We learned a lot about teamwork exercises and future industry skills.",
+  "The organizers clearly explained the student chapter goals.",
+  "The combination of lectures and interactive sessions was good.",
+  "I am grateful that everyone's participation was great.",
+  "The open forum helped secure research ideas and project outputs.",
+  "I enjoyed the speaker segment that covered actual food trends.",
+  "We gained practical experiences for campus activities.",
+  "The event helped me plan my academic and extracurricular goals.",
+  "The organization was excellent, especially the time allocation for each session.",
 ];
 
 const feedbackClosings = [
-  "Makuri ipahimatngon an impact pero klaro nga nakab-ot an purpose han programa.",
-  "Tinuod nga nagin updated kami han mga initiatives han student organization.",
-  "Mas maupay kun mayda pa dugang activity para ha networking han estudyante.",
-  "Nagpabilin an momentum labi na panahon han evaluation after the event.",
-  "Dako an oportunidad nga nagin available para ha mga future student projects.",
-  "Mas nagin malinaw an direction han PAFT-NSC tungod han meeting.",
-  "Nakita ko an dedication han organizers ha pagservi han kabataan.",
-  "Mayda pa hin review area pero overall maopay an experience.",
-  "Nakahatag ini hin inspirasyon para magin mas aktibo ha student chapter.",
-  "Makikita ko nga mayda pa damo pagkakauswag ha sunod nga events.",
+  "It is hard to measure the impact but the program clearly achieved its purpose.",
+  "We were truly updated on the initiatives of the student organization.",
+  "It would be better if there were more activities for student networking.",
+  "The momentum continued especially during the evaluation after the event.",
+  "Great opportunities became available for future student projects.",
+  "The direction of PAFT-NSC became clearer because of the meeting.",
+  "I saw the dedication of the organizers in serving the students.",
+  "There are still areas to review but overall the experience was good.",
+  "This inspired me to become more active in the student chapter.",
+  "I can see that there is still much room for improvement in future events.",
 ];
 
 const improvementSuggestions = [
-  "Mas maayo kun mayda pa klaro nga orientation ha wrapping up han event.",
-  "Pwede i-expand an Q&A para mas madali makuha an iba iba nga opinion han participants.",
-  "Nami kun mayda pa seminar bahin han career opportunities ha food technology.",
-  "Mas makakabulig kun mayda pa guide materials nga mahatag ha participants.",
-  "Mas maupay kun mayda pa entertainment breaks para diri mabug-atan an schedule.",
-  "Maganda kun mayda pa more interactive learning stations ha program.",
-  "Dako an maibubulig kun mayda pa follow-up session para ha student projects.",
-  "Pwede pa i-improve an pag-manage han lining up para han registration.",
-  "Mas nindot kun mas klaro an instructions sa kada workshop station.",
-  "Naka-angay ini kun mayda pa review segment bago magtapos an event.",
+  "It would be better if there was a clearer orientation for wrapping up the event.",
+  "The Q&A can be expanded to gather more diverse opinions from participants.",
+  "It would be nice to have a seminar about career opportunities in food technology.",
+  "It would be more helpful if guide materials were provided to participants.",
+  "It would be better if there were entertainment breaks to lighten the schedule.",
+  "It would be good to have more interactive learning stations in the program.",
+  "Follow-up sessions for student projects would greatly help.",
+  "The lining up for registration can still be improved.",
+  "Clearer instructions at each workshop station would be better.",
+  "A review segment before the event ends would be appropriate.",
 ];
 
 const usedComments = new Set();
@@ -236,7 +236,7 @@ const buildComment = (eventTitle, activities) => {
     const title = eventTitle
       .replace(/PAFT-NSC/g, "PAFT-NSC")
       .replace(/NWSSU/g, "NWSSU");
-    comment = `${intro} ${detail} An ${activity.toLowerCase()} naghatag hin dako nga kontribusyon ha akon pagtuon para han ${title}. ${closing}`;
+    comment = `${intro} ${detail} The ${activity.toLowerCase()} contributed greatly to my learning for the ${title}. ${closing}`;
   } while (usedComments.has(comment));
 
   usedComments.add(comment);
@@ -244,10 +244,10 @@ const buildComment = (eventTitle, activities) => {
 };
 
 const satisfactionDistribution = {
-  Excellent: 57,
-  Good: 28,
-  Fair: 8,
-  Poor: 5,
+  Excellent: 143,
+  Good: 70,
+  Fair: 20,
+  Poor: 12,
 };
 
 const shuffleArray = (arr) => {
@@ -309,11 +309,11 @@ const calculateMean = (ratings) => {
 
 const generateEventTitles = () => {
   const distribution = {
-    "Welcome BSFT Freshies 2025": 40,
-    "PAFT-NSC General Assembly A.Y. 2025–2026": 15,
-    "PAFT Day 2026": 14,
-    "PAFT-NSC Officer Election 2026": 15,
-    "BSFT Batch 2026 Celebration": 14,
+    "Welcome BSFT Freshies 2025": 0,
+    "PAFT-NSC General Assembly A.Y. 2025–2026": 91,
+    "PAFT Day 2026": 73,
+    "PAFT-NSC Officer Election 2026": 60,
+    "BSFT Batch 2026 Celebration": 21,
   };
   const eventList = [];
   eventTitles.forEach((title) => {
@@ -391,7 +391,7 @@ const seedData = async () => {
 
   const shuffledNames = shuffleArray([...participantNames]);
 
-  for (let i = 0; i < 98; i += 1) {
+  for (let i = 0; i < 245; i += 1) {
     const participantName = shuffledNames[i % shuffledNames.length];
     const emailName = participantName
       .replace(/\*/, "")
@@ -431,8 +431,8 @@ const seedData = async () => {
       ratings,
       activities,
       satisfaction,
-      enjoyMost: i < 20 ? buildComment(eventTitle, activities) : "",
-      improvementSuggestions: i < 20 ? randomItem(improvementSuggestions) : "",
+      enjoyMost: i < 50 ? buildComment(eventTitle, activities) : "",
+      improvementSuggestions: i < 50 ? randomItem(improvementSuggestions) : "",
       meanRating,
       createdAt,
       updatedAt: createdAt,

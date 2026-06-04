@@ -39,7 +39,7 @@ const createEvaluation = async (req, res, next) => {
   }
 };
 
-const ADMIN_RESPONSE_LIMIT = 98;
+const ADMIN_RESPONSE_LIMIT = 245;
 
 const getEvaluations = async (req, res, next) => {
   try {

@@ -1,6 +1,6 @@
 const Evaluation = require("../models/Evaluation");
 
-const ADMIN_RESPONSE_LIMIT = 98;
+const ADMIN_RESPONSE_LIMIT = 245;
 const EVENT_TITLES = [
   "Welcome BSFT Freshies 2025",
   "PAFT-NSC General Assembly A.Y. 2025–2026",

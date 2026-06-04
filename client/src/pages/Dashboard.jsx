@@ -65,7 +65,7 @@ const Dashboard = () => {
   const activityData = Object.entries(analytics.activityCounts).map(
     ([name, value]) => ({ name, value }),
   );
-  const totalResponses = Math.min(analytics.totalResponses, 98);
+  const totalResponses = Math.min(analytics.totalResponses, 245);
 
   return (
     <motion.section
